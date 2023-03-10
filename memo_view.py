@@ -1,29 +1,41 @@
 import os
 import sys
 
+
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
+
 
 def add_note():
     pass
 
+
 def read_note():
     pass
+
 
 def update_note():
     pass
 
+
 def del_note():
     pass
+
 
 def del_all_notes():
     pass
 
+
 def read_all_notes():
     pass
 
+
 def end_of_program():
-    pass
+    clear()
+    if input('Are you sure? Press "y" for exit and "n" for return to main menu.\n') == 'y':
+        clear()
+        sys.exit()
+
 
 our_list = []
 
@@ -53,5 +65,5 @@ while True:
         read_all_notes(our_list)
     elif user_choice == 7:
         end_of_program()
-    else: 
+    else:
         enter_in = input('Неверно выбран пункт меню!')

@@ -36,6 +36,19 @@ class NoteJson(object):
     def read_notes(self):
         return self.read_json()
 
+    def del_one_notes(self, num_note):
+        self.notes = self.read_notes()
+        for index, note in enumerate(self.notes):
+            if note.number_note == num_note:
+                del self.notes[index]
+
+        self.write_json(self.notes)
+    
+    def del_all_notes(self):
+        self.notes = self.read_notes()
+        self.notes.clear()
+        self.write_json(self.notes)
+
     def write_json(self, notes):
         json_strings_list = list()
         for note in notes:

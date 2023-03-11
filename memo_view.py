@@ -31,11 +31,15 @@ def run():
         elif user_choice == 3:
             update_note()
         elif user_choice == 4:
-            del_note()
+            del_note=int(note_number())
+            c.del_one_notes(del_note)
+            enter_in()
+        
         elif user_choice == 5:
-            del_all_notes()
+            c.del_all_notes()
+            enter_in()
         elif user_choice == 6:
-            notes = c.read_notes()
+            notes = c.read_json()
             read_all_notes(notes)
             enter_in()
         elif user_choice == 7:
@@ -68,12 +72,21 @@ def update_note():
 def del_note():
     pass
 
-def del_all_notes():
+def del_all_notes(notes):
+
     pass
 
 def read_all_notes(notes):
     for item in notes:
         print(item)
+
+def note_number():
+    while True:
+        number_note = input('Введите id заметки: ')
+        if number_note.isdigit() and int(number_note) > 0:
+            return number_note
+        else:
+            print('Введите целое число(номер заметки)!')
 
 def end_of_program():
     clear()

@@ -17,7 +17,7 @@ class Note(object):
     @property
     def name_note(self):
         return self._name_note
-    
+
     @name_note.setter
     def name_note(self, name_note):
         self._name_note = name_note
@@ -39,6 +39,5 @@ class Note(object):
         self._date_note = date_note
 
     def __str__(self):
-        return f'\n: {self._number_note}\n:' \
-            f'{self._name_note}\n: {self._text_notes}\n:' \
-            f'{self._date_note}\n '
+        return f'\n : {self._number_note}\n :' \
+            f'{self._name_note}\n : {self._text_notes}\n : {self._date_note}\n '

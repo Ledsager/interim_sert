@@ -89,6 +89,4 @@ def note_number():
 
 def end_of_program():
     clear()
-    # if input('Are you sure? Press "y" for exit and "n" for return to main menu.\n') == 'y':
-    #     clear()
     sys.exit()
